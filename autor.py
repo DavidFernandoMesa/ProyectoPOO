@@ -10,6 +10,3 @@ class Autor(Persona):
         super().__init__(nombre)
         self.nacionalidad = nacionalidad
         self.obras_publicadas = obras_publicadas
-        
-    def __str__(self):
-        return f"Nombre: {self.nombre}, Nacionalidad: {self.nacionalidad}, Obras publicadas: {self.obras_publicadas}"
