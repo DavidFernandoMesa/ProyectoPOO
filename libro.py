@@ -18,6 +18,3 @@ class Libro:
         self.idioma = idioma
         self.formato = formato
         self.anio_publicacion = anio_publicacion
-
-    def __str__(self):
-        return f"Título: {self.titulo}, Autor: {self.autor}, Genero: {self.genero}, Idioma: {self.idioma}, Formato: {self.formato}, Anio publicacion: {self.anio_publicacion}"
