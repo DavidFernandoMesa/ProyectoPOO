@@ -1,7 +1,7 @@
 from libro import Libro
 from persona import Persona
 from autor import Autor
-from prestamo import Prestamo
+from reserva import Reserva_de_libros
 from biblioteca import Biblioteca
 import datetime
 
@@ -52,8 +52,14 @@ if __name__ == "__main__":
 
     fecha_prestamo = datetime.date(2023, 4, 14)
     fecha_vencimiento = datetime.date(2023, 6, 14)
-    prestamo = Prestamo([libro4, libro3], autor,
+    Reserva = Reserva_de_libros([libro4, libro3], autor,
                         fecha_prestamo, fecha_vencimiento)
 
-    for prestamos in prestamo.libros:
+    for prestamos in Reserva_de_libros.libros:
         print(vars(prestamos))
+        
+        
+    fecha_publicacion = datetime.date(1997, 12, 24)   
+    creacion = Autor.Crea_libros(
+        "PRUEBA", "AKDJJERDDFJAEURHIUAHFUIEUIRAJBF", fecha_publicacion)
+    print(creacion)

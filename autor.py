@@ -10,3 +10,6 @@ class Autor(Persona):
         super().__init__(nombre)
         self.nacionalidad = nacionalidad
         self.obras_publicadas = obras_publicadas
+        
+    def Crea_libros(titulo, sinopsis, fecha_publicacion):
+        return {"titulo": titulo, " sinopsis": sinopsis, " Fecha de publicacion": fecha_publicacion}
