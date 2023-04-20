@@ -1,3 +1,4 @@
+from libro import Libro
 class Biblioteca:
     id = int
     libros = []
@@ -24,7 +25,7 @@ class Biblioteca:
     def eliminar_persona(self, persona):
         if persona in self.__personas:
             self.__personas.remove(persona)
-       
+
     def __str__(self):
         resultado = f"Nombre: {self.nombre}\n, Nacionalidad: {self.nacionalidad}\n Libros: {self.libros}"
         resultado += "Libros:\n"

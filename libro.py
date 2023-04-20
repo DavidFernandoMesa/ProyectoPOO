@@ -10,9 +10,10 @@ class Libro:
     formato = str
     anio_publicacion = datetime.date
 
-    def __init__(self, titulo, autor, genero, idioma, formato, anio_publicacion):
+    def __init__(self, titulo, autor, sinopsis, genero, idioma, formato, anio_publicacion):
         self.titulo = titulo
         self.autor = autor
+        self.sinopsis = sinopsis
         self.genero = genero
         self.idioma = idioma
         self.formato = formato
