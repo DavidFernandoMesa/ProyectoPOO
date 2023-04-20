@@ -33,4 +33,4 @@ class Autor(Persona):
             return libro
         
     def __str__(self):
-        return f"Nombre: {self.nombre}, Nacionalidad: {self.nacionalidada}, obras publicadas: {self.obras_publicadas}, edad {self.edad}"
+        return f"Nombre: {self.nombre}, Nacionalidad: {self.nacionalidad}, obras publicadas: {self.obras_publicadas}, edad {self.edad}"
