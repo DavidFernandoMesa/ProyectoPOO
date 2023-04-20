@@ -5,7 +5,7 @@ from libro import Libro
 class Reserva_de_libros(Libro):
     id = int
     libros = []
-    persona = []
+    persona = str
     fecha_prestamo = datetime.date
     fecha_vencimiento = datetime.date
     reservado = False

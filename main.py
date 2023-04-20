@@ -45,6 +45,8 @@ if __name__ == "__main__":
     fecha_vencimiento = datetime.date(2023, 6, 14)
     Reserva = Reserva_de_libros([libro4, libro3], [autor],
                                 fecha_prestamo, fecha_vencimiento)
+    for prestamo in Reserva.persona:
+        print(vars(prestamo))
 
     print("CREACION DEL LIBRO")
 
