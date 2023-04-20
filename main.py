@@ -3,6 +3,7 @@ from persona import Persona
 from autor import Autor
 from reserva import Reserva_de_libros
 from biblioteca import Biblioteca
+from niño import Niño
 import datetime
 
 
@@ -24,9 +25,9 @@ if __name__ == "__main__":
     libro3 = Libro("Jane Eyre",
                    "Charlotte Brontë", "Novela", "Ingles", "Fisico", fecha3)
 
-    autor = Autor("Louis-Ferdinand Céline", "Francesa", [libro, libro2])
+    autor = Autor("Louis-Ferdinand Céline", 35, "Francesa", [libro, libro2])
 
-    autor1 = Autor("Charlotte Brontë", "Britanica", [libro3])
+    autor1 = Autor("Charlotte Brontë", 18, "Britanica", [libro3])
 
     fecha4 = datetime.date(1813, 1, 28)
     libro4 = Libro("The works of Charlotte Brontë",
@@ -40,6 +41,27 @@ if __name__ == "__main__":
 
     autor1.obras_publicadas.append(libro5)
 
+    print("PRESTAMO")
+
+    fecha_prestamo = datetime.date(2023, 4, 14)
+    fecha_vencimiento = datetime.date(2023, 6, 14)
+    Reserva = Reserva_de_libros([libro4, libro3], autor,
+                                fecha_prestamo, fecha_vencimiento)
+
+    for prestamos in Reserva_de_libros.libros:
+        print(vars(prestamos))
+
+    print("CREACION DEL LIBRO")
+    fecha_publicacion = datetime.date(1997, 12, 24)
+    creacion = autor1.crea_libro(
+        "PRUEBA", "AKDJJERDDFJAEURHIUAHFUIEUIRAJBF", "Novela", "Español", "Digital", fecha_publicacion)
+    print(creacion)
+
+    fechalibronew = datetime.date(2023, 12, 20)
+    libronew = autor.crea_libro("A prueba de balas", "Un grupo de 7 chicos busca la forma de hacer que el mundo entero entienda el menseaj que quiere representar la palabra LOVE YOUR SELF, expresandola por medio de canciones y poemas que mas adelnate seran la posible perdicion de cada uno de ellos",
+                                "Ficcion", "Espanol", "Digital", fechalibronew)
+    print(libronew)
+    
     print("AUTOR")
     for libro in autor.obras_publicadas:
         print(vars(libro))
@@ -48,18 +70,7 @@ if __name__ == "__main__":
     for libro1 in autor1.obras_publicadas:
         print(vars(libro1))
 
-    print("PRESTAMO")
-
-    fecha_prestamo = datetime.date(2023, 4, 14)
-    fecha_vencimiento = datetime.date(2023, 6, 14)
-    Reserva = Reserva_de_libros([libro4, libro3], autor,
-                        fecha_prestamo, fecha_vencimiento)
-
-    for prestamos in Reserva_de_libros.libros:
-        print(vars(prestamos))
-        
-        
-    fecha_publicacion = datetime.date(1997, 12, 24)   
-    creacion = Autor.Crea_libros(
-        "PRUEBA", "AKDJJERDDFJAEURHIUAHFUIEUIRAJBF", fecha_publicacion)
-    print(creacion)
+    print("BIBLIOTECA")
+    biblioteca = Biblioteca(
+        [libro, libro1, libro2, libro3, libro4, libro5], [autor, autor1])
+    print(vars(biblioteca))

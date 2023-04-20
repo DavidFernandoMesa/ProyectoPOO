@@ -1,22 +1,36 @@
 class Biblioteca:
     id = int
-    lista_libros = []
-    personas = []
+    libros = []
+    __personas = []
 
-    def __init__(self, lista_libros, personas):
-        self.lista_libros = lista_libros
-        self.personas = personas
-        
+    def __init__(self, libros, personas):
+        self.libros = libros
+        self.__personas = personas
+
     def agregar_libro(self, libro):
-        self.lista_libros.append(libro)
+        self.libros.append(libro)
 
     def eliminar_libro(self, libro):
-        if libro in self.lista_libros:
-            self.lista_libros.remove(libro)
+        if libro in self.libros:
+            self.libros.remove(libro)
+
+    def listar_personas(self):
+        for persona in self.__personas:
+            print(persona)
 
     def agregar_persona(self, persona):
-        self.personas.append(persona)
+        self.__personas.append(persona)
 
     def eliminar_persona(self, persona):
-        if persona in self.personas:
-            self.personas.remove(persona)
+        if persona in self.__personas:
+            self.__personas.remove(persona)
+       
+    def __str__(self):
+        resultado = f"Nombre: {self.nombre}\n, Nacionalidad: {self.nacionalidad}\n Libros: {self.libros}"
+        resultado += "Libros:\n"
+        for libro in self.libros:
+            resultado += f"\t{libro}\n"
+        resultado += "Persona:\n"
+        for persona in self.__personas:
+            resultado += f"\t{persona}\n"
+        return resultado
