@@ -2,7 +2,7 @@ from autor import Autor
 from libro import Libro
 import time
 
-class Niño(Autor):
+class Autor_niño(Autor):
     def crea_libro(self, titulo, sinopsis, genero, idioma, formato, fecha_publicacion):
         libro = Libro(titulo, sinopsis, genero, idioma,
                       formato, fecha_publicacion)

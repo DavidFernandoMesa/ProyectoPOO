@@ -3,7 +3,10 @@ from persona import Persona
 from autor import Autor
 from reserva import Reserva_de_libros
 from biblioteca import Biblioteca
-from niño import Niño
+from niño import Autor_niño
+from joven import Autor_joven
+from adulto import Autor_adulto
+from viejo import Autor_viejo
 import datetime
 
 
@@ -51,7 +54,7 @@ if __name__ == "__main__":
     print("CREACION DEL LIBRO")
 
     fechanew = datetime.date(2023, 12, 20)
-    new_book = autor.crea_libro("A prueba de balas", "Un grupo de 7 chicos busca la forma de hacer que el mundo entero entienda el mensaje que quiere representar la palabra LOVE YOUR SELF, expresandola por medio de canciones y poemas que mas adelnate seran la posible perdicion de cada uno de ellos",
+    new_book = Autor_adulto.crea_libro("A prueba de balas", "Un grupo de 7 chicos busca la forma de hacer que el mundo entero entienda el mensaje que quiere representar la palabra LOVE YOUR SELF, expresandola por medio de canciones y poemas que mas adelnate seran la posible perdicion de cada uno de ellos",
                                 "Ficcion", "Espanol", "Digital", fechanew)
     print(new_book)
 
@@ -61,5 +64,4 @@ if __name__ == "__main__":
 
     print("BIBLIOTECA")
     biblioteca = Biblioteca([libro, libro2, libro3, libro4, libro5], [autor, autor1])
-    for lista in biblioteca.listar_personas():
-        print(vars(lista))
+    biblioteca.listar_personas()

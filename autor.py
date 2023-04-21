@@ -1,3 +1,4 @@
+from abc import abstractmethod
 from persona import Persona
 from libro import Libro
 import time
@@ -15,23 +16,9 @@ class Autor(Persona):
         self.nacionalidad = nacionalidad
         self.obras_publicadas = obras_publicadas
 
+    @abstractmethod
     def crea_libro(self, titulo, sinopsis, genero, idioma, formato, fecha_publicacion):
-        libro = Libro(titulo, self.nombre, sinopsis, genero, idioma,
-                      formato, fecha_publicacion)
-        self.obras_publicadas.append(libro)
-
-        if self.edad < 12:
-            time.sleep(10)
-            return libro
-        elif self.edad >= 12 and self.edad < 20:
-            time.sleep(7)
-            return libro
-        elif self.edad >= 20 and self.edad < 40:
-            time.sleep(5)
-            return libro
-        else:
-            time.sleep(2)
-            return libro
+        pass
 
     def __str__(self):
         return f"Nombre: {self.nombre}, Nacionalidad: {self.nacionalidad}, obras publicadas: {self.obras_publicadas}, edad {self.edad}"
